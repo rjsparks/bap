@@ -16,5 +16,7 @@ RUN echo '<head> <meta http-equiv="refresh" content="0; URL=/cgi-bin/abnf.cgi" /
 
 RUN echo 'ServerName 127.0.0.1' >> /etc/apache2/apache2.conf
 
+RUN echo 'Listen 8080' > /etc/apache2/ports.conf
+
 ENTRYPOINT service apache2 start && /bin/sh
-EXPOSE 80
+EXPOSE 8080
