@@ -18,5 +18,6 @@ RUN echo 'ServerName 127.0.0.1' >> /etc/apache2/apache2.conf
 
 RUN echo 'Listen 8080' > /etc/apache2/ports.conf
 
-ENTRYPOINT service apache2 start && /bin/sh
 EXPOSE 8080
+
+CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
