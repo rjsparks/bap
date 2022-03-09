@@ -14,5 +14,7 @@ RUN ./configure && make && cp abnf.cgi bap /usr/lib/cgi-bin && chmod 755 /usr/li
 
 RUN echo '<head> <meta http-equiv="refresh" content="0; URL=/cgi-bin/abnf.cgi" /> </head>' > /var/www/html/index.html
 
+RUN echo 'ServerName 127.0.0.1' >> /etc/apache2/apache2.conf
+
 ENTRYPOINT service apache2 start && /bin/sh
 EXPOSE 80
